@@ -1,0 +1,17 @@
+{
+  "name": "STONEBREAKING — Element Guardians",
+  "short_name": "Stonebreaking",
+  "description": "Taşkıran'ın efsanesi. Element taşlarını kır, zihnini keskinleştir, Chi Skorunu yükselt.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#131024",
+  "theme_color": "#131024",
+  "lang": "tr",
+  "categories": ["games", "puzzle", "education"],
+  "icons": [
+    { "src": "assets/icon.jpg", "sizes": "384x384", "type": "image/jpeg", "purpose": "any" },
+    { "src": "assets/icon.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any" }
+  ]
+}
