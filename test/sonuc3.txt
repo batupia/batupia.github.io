@@ -1,0 +1,21 @@
+   tas: 96, katman sayisi: 2
+     dep 0.00 -> olcek 0.955  golge 3px
+     dep 1.00 -> olcek 1.02  golge 8px
+✅ B4: birden fazla katman var  — 2 katman
+✅ B4: ust katman DAHA BUYUK  — 0.955 -> 1.02
+✅ B4: ust katman DAHA UZUN GOLGELI  — 3px -> 8px
+   Sv9 basladi, oynanip bitiriliyor...
+   seviye simdi: Sv10
+   tease: "🔓 Yeni perde açıldı! Sonraki sunakta hikayenin devamı seni bekliyor."
+✅ Sv10 tease "Yeni perde acildi" diyor  — 🔓 Yeni perde açıldı! Sonraki sunakta hikayenin de
+   "Sonraki Seviye" butonuna basiliyor...
+✅ PERDE II GERCEK OYNANISTA TETIKLENDI  — ekran: s-story
+   Perde II · Mühür | İlk Mühür Çatladı | ch10_muhur.webp | yuklendi:✓
+✅ Perde II dogru icerik
+✅ Perde II sonrasi Sv10 oyunu acildi  — s-game
+   kadin yay: ch1_denge.webp → ch2_kirilma.webp → ch3_cagri_f.webp → ch3_cagri_f.webp → ch10_muhur_f.webp → a20.webp → a30.webp → a40.webp → a50.webp → a60.webp → a70.webp → a85.webp → a100.webp
+✅ kadin varyantlari kullanildi  — 3 adet _f gorseli
+✅ kadin yayinda tum gorseller yuklendi
+   service worker kaydi: {"kayitli":0,"cacheler":[]}
+✅ eski SW/cache sayfayi kilitlemiyor  — {"kayitli":0,"cacheler":[]}
+✅ JS hatasi yok  — temiz

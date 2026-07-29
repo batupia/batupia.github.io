@@ -47,10 +47,8 @@ body{
 @font-face{
   font-family:'STONEBREAKING';
   src:url('assets/font/stonebreaking.woff2') format('woff2'),
-      url('assets/font/stonebreaking.woff') format('woff'),
-      url('assets/font/stonebreaking.ttf') format('truetype');
-  font-weight:400 700; font-style:normal; font-display:block;
-  unicode-range: U+0020-007E, U+00C0-024F, U+1E00-1EFF, U+011E-011F, U+0130-0131, U+015E-015F, U+011E, U+00D6, U+00DC, U+00C7, U+011F, U+0130;
+      url('assets/font/stonebreaking.woff') format('woff');
+  font-weight:400 700; font-style:normal; font-display:swap;
 }
 /* FIRCA DILI: yalniz BASLIKLAR ve marka adi.
    Govde metni sistem fontunda kalir - el yazisi uzun metinde
@@ -58,13 +56,7 @@ body{
    basliklarda verilir, bilgi govdede net kalir. */
 .brush,h2,#stTitle,.jHead,.jRank,#stChapter{
   font-family:'STONEBREAKING','Segoe UI Semibold',system-ui,sans-serif;
-  letter-spacing:.8px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-variant-ligatures: none;
-  transform: translateZ(0);
-}
+  letter-spacing:.5px}
 h2{font-size:27px;font-weight:700}
 #stTitle{font-size:29px}
 .jHead{font-size:19px}
@@ -127,8 +119,10 @@ h1,h2,h3{margin:6px 0}
    ve negatif konumlar (-6%) yaziyi yedi.
    COZUM: sarmalayiciya yatay/dikey PAY verildi, taslar o payin icine
    yerlesti. Artik logoya hic dokunmuyorlar. */
-.logoWrap{position:relative;display:inline-block;width:min(92%,340px);
-  margin:0 auto;padding:9% 15% 7%}
+/* Madalyonlar kalkinca pay gereksiz kaldi: logo tam genisligi kullanir.
+   Marka isareti nefes almali, etrafinda kalabalik olmamali. */
+.logoWrap{position:relative;display:inline-block;width:min(88%,320px);
+  margin:0 auto;padding:0}
 .logoWrap .logo{width:100%;display:block;
   filter:drop-shadow(0 6px 22px rgba(120,90,220,.45));
   animation:logoBreathe 6s ease-in-out infinite}
@@ -1254,10 +1248,15 @@ h1,h2,h3{margin:6px 0}
   <div class="splashInner">
     <div class="logoWrap">
       <img src="assets/logo.webp" class="logo" alt="STONEBREAKING">
-      <img class="em fire"  src="assets/em_fire.webp"  alt="">
-      <img class="em water" src="assets/em_water.webp" alt="">
-      <img class="em earth" src="assets/em_earth.webp" alt="">
-      <img class="em air"   src="assets/em_air.webp"   alt="">
+      <!-- ELEMENT MADALYONLARI KALDIRILDI.
+           Kullanici: "elementlerin simgeleri kopyalayip yapistirilmis gibi,
+           hicbir estetik yok".
+           Gercek sebep: LOGONUN KENDISI zaten dort elementi tasiyor
+           (kirmizi alev, mavi damla, yesil kristal, beyaz sarmal - hepsi
+           tas madalyonlarin icinde cizili). Disina dort tane daha koymak
+           ayni sembolu IKI KEZ gostermek demekti; ustelik disaridakiler
+           kare kutu icinde, logonun organik tas diliyle catisiyordu.
+           Bir logo kendi kendini tekrar etmez. -->
     </div>
     <div class="heroWrap" id="heroWrap" style="position:relative">
       <img id="heroImg" src="assets/ranks/male_1.webp" class="heroImg" alt="Taşkıran"></div>
@@ -1482,7 +1481,7 @@ const STORY=[
         LOGO KALDIRILDI: cemberin ortasinda marka degil OYUNCU durmali.
         heroAt = avatarin konumu (x, alttan yukseklik, boy). */
      heroAt:{x:"50%", b:"20%", h:"40%"},
-     tr:{c:"BÖLÜM 01 — DENGE",   t:"Dört Ruh",
+     tr:{c:"Perde I · Denge",   t:"Dört Ruh",
        x:`Başlangıçta yalnızca <b>Denge</b> vardı.<br><br>
           Dört ruh — <b>Kor</b>, <b>Dem</b>, <b>Kaya</b>, <b>Yel</b> — evrenin çekirdeğinde
           bir çember kurmuştu. Ateş hızı, su mantığı, toprak hafızayı, hava örüntüyü taşırdı.
@@ -1496,7 +1495,7 @@ const STORY=[
      /* core yok (logo binmesin) ama catlama merkezi gorseldeki patlamayla
         ayni yerde olmali - fx ayri okunuyor */
      fxAt:{x:"50%", y:"50%"},
-     tr:{c:"BÖLÜM 01 — KIRILMA", t:"Çekirdek Çatladı",
+     tr:{c:"Perde I · Kırılma", t:"Çekirdek Çatladı",
        x:`Sonra biri diğerlerinden güçlü olmak istedi.<br><br>
           Çember koptu. Çekirdek <b>binlerce taşa</b> bölündü ve dört ruh evrenin dört ucuna
           savruldu. O günden beri her taş bir düşünce parçası taşıyor — ve sahipsiz duruyor.
@@ -1508,7 +1507,7 @@ const STORY=[
           of thought — and waits, unclaimed.
           <span class="whisper">"Unbalanced power is not power. It is only noise."</span>`}},
    { img:"assets/story/ch3_cagri.webp", focus:"center 50%", hero:true,
-     tr:{c:"BÖLÜM 01 — ÇAĞRI",   t:"Sen Yeni Taşkıran'sın",
+     tr:{c:"Perde I · Çağrı",   t:"Sen Yeni Taşkıran'sın",
        x:`Efsane der ki: taşları kırabilen biri gelecek.<br>
           Onları kıracak, içindeki düşünceyi geri alacak, çemberi yeniden kuracak.<br><br>
           Kolyen az önce parladı, <b>Taşkıran</b>. Bu bir tesadüf değil.
@@ -1520,7 +1519,7 @@ const STORY=[
           <span class="whisper">The journey begins in the void, at the first altar.</span>`}},
    /* Efsaneden oynanisa gecis: kurallar hikayenin dilinde anlatilir. */
    { img:"assets/story/ch3_cagri.webp", focus:"center 50%", hero:true, how:true,
-     tr:{c:"BÖLÜM 01 — İLK SUNAK", t:"Taş Nasıl Kırılır?",
+     tr:{c:"Perde I · İlk Sunak", t:"Taş Nasıl Kırılır?",
        x:`Sunağa <b>üç aynı taşı</b> getirirsen içlerindeki düşünce serbest kalır ve taş kırılır.<br><br>
           🔓 Yalnızca <b>üstü açık ve yanı boş</b> taşları alabilirsin.<br>
           📦 Tepsi dolarsa sunak kilitlenir — dikkatli seç.<br>
@@ -1528,7 +1527,7 @@ const STORY=[
           Efsanenin geri kalanı kilitli. <b>Her sunağı geçtiğinde bir anı daha açılır</b> —
           onuncu sunakta mühür çatlayacak ve içerideki şey seninle konuşacak.<br><br>
           <span class="whisper">Her kırılan taş, zihninin bir ölçüsüdür. Hikayen oynadıkça yazılır.</span>`},
-     en:{c:"CHAPTER 01 — FIRST ALTAR", t:"How Is a Stone Broken?",
+     en:{c:"Act I · The First Altar", t:"How Is a Stone Broken?",
        x:`Bring <b>three identical stones</b> to the altar and the thought within is freed — the stone breaks.<br><br>
           🔓 You may only take stones that are <b>uncovered and open on one side</b>.<br>
           📦 If the tray fills, the altar locks — choose carefully.<br>
@@ -1539,7 +1538,7 @@ const STORY=[
  ]},
  { act:1, at:10, panels:[
    { img:"assets/story/ch10_muhur.webp", focus:"center 43%", hero:true,
-     tr:{c:"BÖLÜM 02 — MÜHÜR ÇATLIYOR", t:"İlk Mühür Çatladı",
+     tr:{c:"Perde II · Mühür", t:"İlk Mühür Çatladı",
        x:`On sunak geride kaldı. Kırdığın taşların düşünceleri kolyende birikti
           ve karşındaki <b>antik mühür</b> ilk kez çatladı.<br><br>
           Çatlaktan sızan ışık sıcak. Çok sıcak. İçeride bir şey uyanıyor —
@@ -1554,12 +1553,12 @@ const STORY=[
  ]},
  { act:2, at:20, panels:[
    { img:"assets/story/a20.webp", focus:"center 47%",
-     tr:{c:"BÖLÜM 03 — KOR'UN UYANIŞI", t:"Ateş Serbest",
+     tr:{c:"Perde III · Kor", t:"Ateş Serbest",
        x:`Mühür patladı ve içeriden bir kıvılcım fırladı — küçük, hızlı, öfkeli.<br><br>
           <b>Kor</b>. Yüz yıl taşın içinde beklemiş, sönmemiş.<br><br>
           Sana bakıyor, sonra kolyene. Ve ilk kez kimse ona emretmeden geliyor.
           <span class="whisper">"Hızlıymışsın. Ama hız tek başına hiçbir yere götürmez. Bunu bana zor yoldan öğrettiler."</span>`},
-     en:{c:"CHAPTER 03 — KOR AWAKENS", t:"Fire Set Free",
+     en:{c:"Act III · Kor", t:"Fire Set Free",
        x:`The seal burst and a spark shot out — small, fast, furious.<br><br>
           <b>Kor</b>. A hundred years inside the stone, and never extinguished.<br><br>
           He looks at you, then at your amulet. And for the first time, he comes without being commanded.
@@ -1567,13 +1566,13 @@ const STORY=[
  ]},
  { act:3, at:30, panels:[
    { img:"assets/story/a30.webp", focus:"center 47%",
-     tr:{c:"BÖLÜM 04 — DONMUŞ OKYANUS", t:"Donmuş Okyanus",
+     tr:{c:"Perde IV · Dem", t:"Donmuş Okyanus",
        x:`Bir okyanus buldun — ama dalgalar yerinde durmuş, taşa dönmüş.<br><br>
           Devasa bir dalganın içinde <b>Dem</b> uyuyor. Gözleri kapalı, buzun içinde asılı.
           Kırmak işe yaramıyor; buz sertlikten değil <i>kararsızlıktan</i> donmuş.<br><br>
           Kolyeni buza dayıyorsun.
           <span class="whisper">"Su akmayı bırakınca donar. Zihin de öyle."</span>`},
-     en:{c:"CHAPTER 04 — FROZEN OCEAN", t:"The Frozen Ocean",
+     en:{c:"Act IV · Dem", t:"The Frozen Ocean",
        x:`You found an ocean — but the waves stopped mid-motion, turned to stone.<br><br>
           Inside a colossal wave sleeps <b>Dem</b>. Eyes closed, suspended in ice.
           Breaking it does nothing; this ice is frozen not by cold but by <i>hesitation</i>.<br><br>
@@ -1582,13 +1581,13 @@ const STORY=[
  ]},
  { act:4, at:40, panels:[
    { img:"assets/story/a40.webp", focus:"center 51%",
-     tr:{c:"BÖLÜM 05 — BOŞ SAYFALAR", t:"Boş Sayfalar",
+     tr:{c:"Perde V · Kaya", t:"Boş Sayfalar",
        x:`Sonsuz bir kütüphane — ama levhaların çoğu <b>boş</b>.<br><br>
           <b>Kaya</b> aralarında oturuyor, yaprakları solmuş. Hafızanın ruhu kendi hafızasını
           kaybediyor. Hatırlamak için yardıma ihtiyacı var.<br><br>
           Kırdığın taşlardan biri altın rünlerle yeniden yazılıyor. Kaya başını kaldırıyor.
           <span class="whisper">"Sen hatırladıkça... ben de hatırlıyorum."</span>`},
-     en:{c:"CHAPTER 05 — BLANK PAGES", t:"The Blank Pages",
+     en:{c:"Act V · Kaya", t:"The Blank Pages",
        x:`An endless library — but most of the tablets are <b>blank</b>.<br><br>
           <b>Kaya</b> sits among them, her leaves wilting. The spirit of memory is losing
           her own. She needs help to remember.<br><br>
@@ -1597,14 +1596,14 @@ const STORY=[
  ]},
  { act:5, at:50, panels:[
    { img:"assets/story/a50.webp", focus:"center 46%",
-     tr:{c:"BÖLÜM 06 — RÜZGÂRIN ÖRÜNTÜSÜ", t:"Dinmeyen Fırtına",
+     tr:{c:"Perde VI · Yel", t:"Dinmeyen Fırtına",
        x:`Son ruh kaçmıyor — <b>kaçamıyor</b>.<br><br>
           <b>Yel</b> kendi fırtınasının ortasında dönüyor, kanatları açık ama çaresiz.
           Örüntüyü kaybeden rüzgâr sadece gürültüdür.<br><br>
           Rüzgâra karşı eğiliyorsun, elini uzatıyorsun. Fırtınayı durdurmuyorsun —
           içindeki <i>düzeni</i> gösteriyorsun.
           <span class="whisper">"Kaosun içinde bir desen var. Sen onu görebiliyorsun."</span>`},
-     en:{c:"CHAPTER 06 — PATTERN OF WIND", t:"The Endless Storm",
+     en:{c:"Act VI · Yel", t:"The Endless Storm",
        x:`The last spirit is not running — she <b>cannot</b>.<br><br>
           <b>Yel</b> spins at the heart of her own storm, wings spread but helpless.
           Wind that has lost its pattern is only noise.<br><br>
@@ -1614,7 +1613,7 @@ const STORY=[
  ]},
  { act:6, at:60, panels:[
    { img:"assets/story/a60.webp", focus:"center 47%",
-     tr:{c:"BÖLÜM 07 — AYNADAKİ GÖLGE", t:"Kendi Yansıman",
+     tr:{c:"Perde VII · Gölge", t:"Kendi Yansıman",
        x:`Dört ruh yanında. Ama önündeki aynada <b>sen</b> varsın.<br><br>
           Aynı yüz, aynı cübbe — ve çatlamış, kararmış bir kolye. Gözleri kırmızı.
           Sana en iyi bildiği şeyle saldırıyor: <i>haklı olduğun anlar</i>.<br><br>
@@ -1629,7 +1628,7 @@ const STORY=[
  ]},
  { act:7, at:70, panels:[
    { img:"assets/story/a70.webp", focus:"center 47%",
-     tr:{c:"BÖLÜM 08 — ÇEMBER KAPANIYOR", t:"Dördü Bir Arada",
+     tr:{c:"Perde VIII · Çember", t:"Dördü Bir Arada",
        x:`Gölgeyi tek bir elementle yenemedin. Dördünü <b>aynı anda</b> kullandığında dağıldı.<br><br>
           Şimdi dört ruh etrafında dönüyor, altın iplikler kolyene akıyor.
           Hız, mantık, hafıza, örüntü — ilk kez birlikte.<br><br>
@@ -1642,7 +1641,7 @@ const STORY=[
  ]},
  { act:8, at:85, panels:[
    { img:"assets/story/a85.webp", focus:"center 46%",
-     tr:{c:"BÖLÜM 09 — SENDEN ÖNCEKİ", t:"Senden Önce Biri Vardı",
+     tr:{c:"Perde IX · İlk Taşkıran", t:"Senden Önce Biri Vardı",
        x:`Boşlukta devasa bir heykel: kukuletalı, yaşlı, taşa dönmüş bir figür.
           Göğsündeki kolye <b>boş ve kırık</b>.<br><br>
           <b>İlk Taşkıran.</b> O da buraya kadar geldi. O da dördünü buldu.
@@ -2595,21 +2594,6 @@ function svgLetter(ch){
      - Cekirdek: merkezde kucuk altin nokta
    Boylece her tasin uzerinde markanin imzasi var ama sembol net kalir.
    Element taslarinda tam muhur, diger ailelerde ince catlak izi. */
-
-function stonebreakingLogoSVG(el="fire", sizeW="58%"){
-  const F=INK.fire, W=INK.water, E=INK.earth, A=INK.air, G=INK.gold;
-  const C = el==="water"?W:el==="earth"?E:el==="air"?A:F;
-  return `<svg viewBox="0 0 200 120" style="width:${sizeW}" class="sbLogo" aria-hidden="true">
-    <defs><linearGradient id="lgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${G.l}"/><stop offset="100%" stop-color="${G.d}"/></linearGradient></defs>
-    <circle cx="100" cy="58" r="46" fill="none" stroke="${G.d}" stroke-width="5.2" opacity="0.9" stroke-dasharray="72 14 72 14" stroke-dashoffset="40" transform="rotate(-90 100 58)"/>
-    <circle cx="100" cy="58" r="38" fill="${C.d}" stroke="${G.d}" stroke-width="2.5"/>
-    <g opacity="0.9"><circle cx="100" cy="28" r="7" fill="${F.d}" stroke="${G.d}" stroke-width="1.2"/><circle cx="130" cy="58" r="7" fill="${W.d}" stroke="${G.d}" stroke-width="1.2"/><circle cx="100" cy="88" r="7" fill="${E.d}" stroke="${G.d}" stroke-width="1.2"/><circle cx="70" cy="58" r="7" fill="${A.d}" stroke="${G.d}" stroke-width="1.2"/></g>
-    <circle cx="100" cy="58" r="10" fill="${G.l}" stroke="${G.d}" stroke-width="1.5"/>
-    <path d="M56 106 Q100 112 144 106" fill="none" stroke="url(#lgG)" stroke-width="4.2" stroke-linecap="round" opacity="0.85"/>
-    <text x="100" y="18" text-anchor="middle" font-family="'STONEBREAKING',sans-serif" font-size="13" font-weight="800" fill="${G.d}" letter-spacing="2.5" opacity="0.85">STONEBREAKING</text>
-  </svg>`;
-}
-
 function brandRing(c, full){
   /* v2: ilk denemede halka sembolun UZERINE biniyordu (r=37 cok genis,
      firca cizgisi tabanla cakisiyordu). Simdi halka DISARI alindi
@@ -3099,7 +3083,7 @@ function fixAvatar(a){
 
 function blankProfile(name,avatar,mode,sex){
   return { id:"p"+Date.now()+Math.floor(Math.random()*999),
-    name:name||"STONEBREAKING", avatar:fixAvatar(avatar), mode:mode||"family", sex:sex||"male",
+    name:name||"Taşkıran", avatar:fixAvatar(avatar), mode:mode||"family", sex:sex||"male",
     level:1, spirit:null, sessions:0, lives:ENERGY_MAX, lastPlay:Date.now(),
     chi:{speed:CHI_START,logic:CHI_START,memory:CHI_START,pattern:CHI_START},
     peak:CHI_START, cleared:0, best:0, acts:[] };
@@ -3151,7 +3135,7 @@ function load(){
     if(old){
       const o=JSON.parse(old);
       if(o&&o.chi){
-        const p=Object.assign(blankProfile("STONEBREAKING","🔥","family"),o);
+        const p=Object.assign(blankProfile("Taşkıran","🔥","family"),o);
         p.id="p_migrated"; DB={profiles:[p],active:p.id,familyBonusDay:null};
         S=applyElapsed(p); saveDB();
         return true;
@@ -3525,7 +3509,7 @@ function showExamResult(){
 function shareExam(){
   const e=S.exam; if(!e) return;
   const txt=t("exShareTxt").replace("{iq}",Math.round(e.iq))
-    .replace("{name}",S.name||"STONEBREAKING");
+    .replace("{name}",S.name||"Taşkıran");
   const url="https://stonebreaking.github.io/";
   if(navigator.share){ navigator.share({title:"STONEBREAKING",text:txt,url}).catch(()=>{}); }
   else { try{ navigator.clipboard.writeText(txt+" "+url);
@@ -4799,60 +4783,136 @@ function heroOf(p){ return heroSrc(p.sex,p.level); }
    ================================================================== */
 function amuletSVG(){
   const F=INK.fire, W=INK.water, E=INK.earth, A=INK.air, G=INK.gold;
+  /* ==================================================================
+     KOLYE v2 — karakterin cizim diline uyduruldu
+     ------------------------------------------------------------------
+     Kullanici: "kolyede elementlerin simgeleri kopyalayip yapistirilmis
+     gibi, hicbir estetik yok".
+
+     v1'in sorunu: DUZ VEKTOR idi. Karakter yumusak golgeli, altin
+     islemeli, cizgi kalinligi degisken bir tarzda cizilmis; kolye ise
+     tek renk dolgu + duz kenarla duruyordu. Uzerine yapistirilmis
+     cikartma gibi goruyordu.
+
+     v2'de karakterin dilini taklit ediyoruz:
+       - Her tas RADYAL GRADYAN (ustten isik, altta koyu)
+       - Altin cerceve CIFT KATMAN (dis koyu + ic parlak) = kabartma
+       - Ic golge: tasin oturdugu yuvada derinlik
+       - Semboller yumusak, kalin uclu (karakterin cizgi diline uygun)
+       - Merkez cekirdek isik sacar (radialGradient)
+     ================================================================== */
+  const uid = "am" + (amuletSVG._n = (amuletSVG._n||0) + 1);
+  const tas = (id, cx, cy, koyu, acik) => `
+    <radialGradient id="${id}" cx="38%" cy="30%" r="78%">
+      <stop offset="0%"  stop-color="${acik}"/>
+      <stop offset="62%" stop-color="${koyu}"/>
+      <stop offset="100%" stop-color="${koyu}" stop-opacity=".82"/>
+    </radialGradient>`;
   return `<svg class="heroAmulet" viewBox="0 0 100 100" aria-hidden="true">
-    <circle cx="50" cy="50" r="43" fill="rgba(18,12,34,.62)"
-      stroke="${G.d}" stroke-width="4"/>
-    <circle cx="50" cy="50" r="12" fill="${G.l}"/>
-    <circle cx="50" cy="50" r="12" fill="none" stroke="${G.d}" stroke-width="2.5"/>
-    <!-- UST: ates (kirmizi) -->
-    <circle cx="50" cy="17" r="12.5" fill="${F.d}" stroke="${G.d}" stroke-width="2"/>
-    <path d="M50 10c3 5 7 7 7 12a7 7 0 0 1-14 0c0-3 2-5 3-7 1 2 2 3 3 4-1-4 1-7 1-9z"
-      fill="${F.l}"/>
-    <!-- SAG: su (mavi) -->
-    <circle cx="83" cy="50" r="12.5" fill="${W.d}" stroke="${G.d}" stroke-width="2"/>
-    <path d="M83 42c4 5 7 9 7 12a7 7 0 0 1-14 0c0-3 3-7 7-12z" fill="${W.l}"/>
-    <!-- ALT: toprak (yesil) -->
-    <circle cx="50" cy="83" r="12.5" fill="${E.d}" stroke="${G.d}" stroke-width="2"/>
-    <path d="M50 75l6 8-3 10h-6l-3-10z" fill="${E.l}"/>
-    <!-- SOL: hava (beyaz) -->
-    <circle cx="17" cy="50" r="12.5" fill="${A.d}" stroke="${G.d}" stroke-width="2"/>
-    <path d="M17 42a8 8 0 1 1-8 8 6 6 0 0 1 6-6 4.5 4.5 0 0 1 4.5 4.5 3 3 0 0 1-3 3"
-      fill="none" stroke="${A.l}" stroke-width="3.4" stroke-linecap="round"/>
+    <defs>
+      ${tas(uid+"f", 50,17, F.d, F.l)}
+      ${tas(uid+"w", 83,50, W.d, W.l)}
+      ${tas(uid+"e", 50,83, E.d, E.l)}
+      ${tas(uid+"a", 17,50, A.d, A.l)}
+      <radialGradient id="${uid}core" cx="42%" cy="34%" r="72%">
+        <stop offset="0%" stop-color="#fff6d8"/>
+        <stop offset="55%" stop-color="${G.l}"/>
+        <stop offset="100%" stop-color="${G.d}"/>
+      </radialGradient>
+      <radialGradient id="${uid}bg" cx="50%" cy="34%" r="76%">
+        <stop offset="0%"   stop-color="#2c2450" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#0d0920" stop-opacity=".78"/>
+      </radialGradient>
+      <filter id="${uid}in" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="0" dy="1.1" stdDeviation="1.1"
+          flood-color="#1a1030" flood-opacity=".75"/>
+      </filter>
+    </defs>
+
+    <!-- yuva: kolyenin govdesi, ustten isik alan koyu disk -->
+    <circle cx="50" cy="50" r="44" fill="url(#${uid}bg)"/>
+    <circle cx="50" cy="50" r="44" fill="none" stroke="${G.d}" stroke-width="3.4"/>
+    <circle cx="50" cy="50" r="41" fill="none" stroke="${G.l}" stroke-width="1.5" opacity=".55"/>
+    <!-- dort tasi birlestiren ince cember: "cember" temasi -->
+    <circle cx="50" cy="50" r="30" fill="none" stroke="${G.d}"
+      stroke-width="1.8" opacity=".42" stroke-dasharray="3 4"/>
+
+    <g filter="url(#${uid}in)">
+      <!-- UST: ATES (kirmizi) -->
+      <circle cx="50" cy="17" r="13" fill="url(#${uid}f)"/>
+      <circle cx="50" cy="17" r="13" fill="none" stroke="${G.d}" stroke-width="2.2"/>
+      <circle cx="50" cy="17" r="10.8" fill="none" stroke="#fff" stroke-width=".9" opacity=".28"/>
+      <path d="M50 10.5c2.6 4.6 6.2 6.6 6.2 10.6a6.2 6.2 0 0 1-12.4 0
+               c0-2.6 1.6-4.4 2.8-6.2 .9 1.9 1.9 2.7 2.8 3.6-1-3.7 .6-6.3 .6-8z"
+        fill="#fff" opacity=".92"/>
+
+      <!-- SAG: SU (mavi) -->
+      <circle cx="83" cy="50" r="13" fill="url(#${uid}w)"/>
+      <circle cx="83" cy="50" r="13" fill="none" stroke="${G.d}" stroke-width="2.2"/>
+      <circle cx="83" cy="50" r="10.8" fill="none" stroke="#fff" stroke-width=".9" opacity=".28"/>
+      <path d="M83 42.4c3.6 4.6 6.2 8 6.2 10.8a6.2 6.2 0 0 1-12.4 0
+               c0-2.8 2.6-6.2 6.2-10.8z" fill="#fff" opacity=".92"/>
+      <path d="M79.4 53.4c0-2.2 1.3-4 2.5-5.4" fill="none" stroke="${W.d}"
+        stroke-width="1.6" stroke-linecap="round" opacity=".5"/>
+
+      <!-- ALT: TOPRAK (yesil) -->
+      <circle cx="50" cy="83" r="13" fill="url(#${uid}e)"/>
+      <circle cx="50" cy="83" r="13" fill="none" stroke="${G.d}" stroke-width="2.2"/>
+      <circle cx="50" cy="83" r="10.8" fill="none" stroke="#fff" stroke-width=".9" opacity=".28"/>
+      <path d="M50 75.6l5.4 7.2-2.6 8.6h-5.6l-2.6-8.6z" fill="#fff" opacity=".92"/>
+      <path d="M50 75.6l5.4 7.2-4.2 1.4z" fill="${E.d}" opacity=".45"/>
+
+      <!-- SOL: HAVA (beyaz) -->
+      <circle cx="17" cy="50" r="13" fill="url(#${uid}a)"/>
+      <circle cx="17" cy="50" r="13" fill="none" stroke="${G.d}" stroke-width="2.2"/>
+      <circle cx="17" cy="50" r="10.8" fill="none" stroke="#fff" stroke-width=".9" opacity=".3"/>
+      <path d="M17 42.6a7.4 7.4 0 1 1-7.4 7.4 5.6 5.6 0 0 1 5.6-5.6
+               4.2 4.2 0 0 1 4.2 4.2 2.9 2.9 0 0 1-2.9 2.9"
+        fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".95"/>
+    </g>
+
+    <!-- CEKIRDEK: dordunun ortasinda isik -->
+    <circle cx="50" cy="50" r="13" fill="url(#${uid}core)"/>
+    <circle cx="50" cy="50" r="13" fill="none" stroke="${G.d}" stroke-width="2.2"/>
+    <circle cx="46.5" cy="46" r="4.2" fill="#fff" opacity=".55"/>
   </svg>`;
 }
 function btTileSVG(){
-  const F=INK.fire, W=INK.water, E=INK.earth, A=INK.air, G=INK.gold;
-  return `<svg class="btTile" viewBox="0 0 100 100" aria-hidden="true">
+  /* BT TASI v2 — duz dikdortgen degil, kazinmis kumtasi levha.
+     v1 kagit gibi duruyordu: tek renk dolgu, duz kenar, golge yok.
+     Simdi: gradyan govde + kalinlik kenari + oyma cerceve + catlaklar. */
+  const uid = "bt" + (btTileSVG._n = (btTileSVG._n||0) + 1);
+  return `<svg class="btTile" viewBox="0 0 68 88" aria-hidden="true">
     <defs>
-      <radialGradient id="btG" cx="50%" cy="42%">
-        <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.92"/>
-        <stop offset="28%" stop-color="${G.l}" stop-opacity="0.85"/>
-        <stop offset="100%" stop-color="${G.d}" stop-opacity="1"/>
-      </radialGradient>
+      <linearGradient id="${uid}g" x1="20%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%"   stop-color="#f0dcb4"/>
+        <stop offset="45%"  stop-color="#dcc194"/>
+        <stop offset="100%" stop-color="#bfa070"/>
+      </linearGradient>
+      <filter id="${uid}e" x="-25%" y="-25%" width="150%" height="150%">
+        <feDropShadow dx="0" dy="1.2" stdDeviation=".7"
+          flood-color="#4a3113" flood-opacity=".55"/>
+        <feDropShadow dx="0" dy="-.7" stdDeviation=".5"
+          flood-color="#fff6e0" flood-opacity=".6"/>
+      </filter>
     </defs>
-    <circle cx="50" cy="50" r="44" fill="none" stroke="${G.d}" stroke-width="6" opacity="0.9"
-      stroke-dasharray="68 10 68 10" stroke-dashoffset="28" transform="rotate(-88 50 50)"/>
-    <circle cx="50" cy="50" r="40" fill="url(#btG)" stroke="#5a3d12" stroke-width="2.2"/>
-    <g clip-path="url(#btClip)" opacity="0.92">
-      <path d="M50 50 L50 10 A40 40 0 0 1 90 50 Z" fill="${F.d}"/>
-      <path d="M50 50 L90 50 A40 40 0 0 1 50 90 Z" fill="${W.d}"/>
-      <path d="M50 50 L50 90 A40 40 0 0 1 10 50 Z" fill="${E.d}"/>
-      <path d="M50 50 L10 50 A40 40 0 0 1 50 10 Z" fill="${A.d}"/>
-    </g>
-    <clipPath id="btClip"><circle cx="50" cy="50" r="36"/></clipPath>
-    <g opacity="0.55">
-      <path d="M68 28c2 4 4 6 4 10a6 6 0 0 1-12 0c0-2 1-4 2-6 1 1 1 2 2 3 0-3 1-5 2-7z" fill="${F.l}"/>
-      <path d="M72 68c3 4 5 6 5 9a5 5 0 0 1-10 0c0-2 2-5 5-9z" fill="${W.l}"/>
-      <path d="M32 72l4 6-2 7h-4l-2-7z" fill="${E.l}"/>
-      <path d="M28 32a5 5 0 1 1-5 5 3.5 3.5 0 0 1 3.5-3.5A2.5 2.5 0 0 1 29 36a1.5 1.5 0 0 1-1.5 1.5" fill="none" stroke="${A.l}" stroke-width="2.8" stroke-linecap="round"/>
-    </g>
-    <circle cx="50" cy="50" r="22" fill="#1e1408" opacity="0.82" stroke="${G.d}" stroke-width="1.2"/>
-    <circle cx="50" cy="50" r="22" fill="none" stroke="${G.l}" stroke-width="0.8" opacity="0.6"/>
-    <text x="50" y="60" font-size="28" font-weight="900" text-anchor="middle"
-      fill="#f5d78a" font-family="'STONEBREAKING',Georgia,serif"
-      transform="rotate(-5 50 56)"
-      style="filter:drop-shadow(0 1px 3px rgba(0,0,0,0.8))">BT</text>
-    <circle cx="50" cy="11" r="3.2" fill="${G.l}" opacity="0.9"/>
+    <!-- kalinlik kenari: tasin alt yuzu -->
+    <rect x="5" y="9" width="58" height="76" rx="11" fill="#8a6a3e"/>
+    <!-- govde -->
+    <rect x="4" y="4" width="58" height="76" rx="11" fill="url(#${uid}g)"
+      stroke="#8a6a3e" stroke-width="2.4"/>
+    <!-- oyma ic cerceve -->
+    <rect x="10" y="10" width="46" height="64" rx="8" fill="none"
+      stroke="#a8874f" stroke-width="1.8" opacity=".75"/>
+    <!-- catlaklar: tasin yasadigini gosterir -->
+    <path d="M13 22l4 5-2 4" fill="none" stroke="#a8874f"
+      stroke-width="1.1" opacity=".45" stroke-linecap="round"/>
+    <path d="M55 60l-4 6" fill="none" stroke="#a8874f"
+      stroke-width="1.1" opacity=".4" stroke-linecap="round"/>
+    <!-- BT monogrami: kazinmis gorunum -->
+    <text x="33" y="54" font-size="33" font-weight="900" text-anchor="middle"
+      fill="#4a3113" font-family="'STONEBREAKING',Georgia,serif"
+      filter="url(#${uid}e)" transform="rotate(-5 33 54)">BT</text>
   </svg>`;
 }
 /* Rutbeye gore kolye/tas konumu: gorseller birbirinden farkli
@@ -4893,7 +4953,18 @@ function paintHeroGear(wrap, level, scale){
   if(!wrap) return;
   wrap.querySelectorAll(".heroAmulet,.btTile").forEach(e=>e.remove());
   const f=heroFitFor(level||1);
-  const k=scale||1;
+  let k=scale||1;
+  /* OLCEK DUZELTMESI: yuzdeler KAP genisligine gore hesaplanir ama
+     kahraman gorseli kaptan dar olabilir (ana menude kap 295px,
+     gorsel 183px). Bu durumda kolye gorsele gore %26 cikiyordu -
+     denetci "orantisiz buyuk" dedi, hakliydi.
+     Cozum: gorsel/kap oranini olcup yuzdeyi ona gore kucult. */
+  const im=wrap.querySelector("img");
+  if(im){
+    const iw=im.getBoundingClientRect().width;
+    const ww=wrap.getBoundingClientRect().width;
+    if(iw>0 && ww>0) k *= (iw/ww);
+  }
   wrap.insertAdjacentHTML("beforeend", amuletSVG()+btTileSVG());
   const am=wrap.querySelector(".heroAmulet"), bt=wrap.querySelector(".btTile");
   if(am){ am.style.setProperty("--amY",f.amY);
@@ -6146,21 +6217,8 @@ function playScene(lv, onDone){
   if(hero){
     hero.src=heroOf(S);
     const own=!!sc.spirit;
-    /* HATA (SAHNE_GOZU buldu): ruh ani OLMAYAN sahnelerde metin blogu
-       daha kisa (%28) ama kahraman ayni yukseklikte kaliyordu -> botlari
-       arc yazisinin uzerine biniyordu.
-       COZUM: kahramanin alt kenari, metin blogunun ustunden guvenli
-       mesafede baslasin. Blok payi runtime'da olculuyor (--sh). */
-    const card=document.getElementById("sceneCard");
-    card.style.setProperty("--heroH", own?"36%":"32%");
-    /* Metin blogunun GERCEK yuksekligi olculur, kahraman onun ustune
-       konumlanir. Blok icerige gore degistigi icin sabit yuzde yetmiyor. */
-    requestAnimationFrame(()=>{
-      const body=document.getElementById("sceneBody");
-      const H=card.clientHeight||1;
-      const pay=body.getBoundingClientRect().height/H*100;
-      card.style.setProperty("--heroB", Math.max(28, Math.round(pay)+3)+"%");
-    });
+    document.getElementById("sceneCard").style.setProperty("--heroH", own?"38%":"33%");
+    document.getElementById("sceneCard").style.setProperty("--heroB", own?"27%":"25%");
     const hw=document.getElementById("sceneHeroWrap");
     if(hw){ hw.style.animation="none"; void hw.offsetWidth; hw.style.animation="";
             paintHeroGear(hw, S.level); }
@@ -6459,7 +6517,7 @@ if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catc
    aldigimiz degisikligi oyuncu 10 dakika GOREMIYOR (biz de goremedik).
    Cozum: acilista sessizce sunucudaki surumu sor; degistiyse bir kez
    sert yenile. Kullanicidan "cache temizle" istemek zorunda kalmayiz. */
-const BUILD="2026-07-28-final";
+const BUILD="2026-07-29a";
 (async()=>{
   try{
     const r=await fetch("surum.json?t="+Date.now(),{cache:"no-store"});

@@ -1,0 +1,139 @@
+{
+ "tarih": "2026-07-29T06:39:59.942Z",
+ "url": "http://localhost:8899/",
+ "bulgular": [
+  {
+   "goz": "🎩",
+   "seviye": "OK",
+   "baslik": "Oyun açılıyor",
+   "detay": "2.7s içinde ana menü"
+  },
+  {
+   "goz": "🎩",
+   "seviye": "OK",
+   "baslik": "Konsol temiz",
+   "detay": "JS hatası yok"
+  },
+  {
+   "goz": "🎩",
+   "seviye": "OK",
+   "baslik": "Tüm dosyalar yerinde",
+   "detay": "404 yok"
+  },
+  {
+   "goz": "🎩",
+   "seviye": "OK",
+   "baslik": "Sürüm damgası",
+   "detay": "2026-07-28d"
+  },
+  {
+   "goz": "🎮",
+   "seviye": "OK",
+   "baslik": "Tahta hızlı açılıyor",
+   "detay": "27ms · 42 taş"
+  },
+  {
+   "goz": "🎮",
+   "seviye": "OK",
+   "baslik": "Dokunma tepkisi",
+   "detay": "10ms"
+  },
+  {
+   "goz": "🎮",
+   "seviye": "OK",
+   "baslik": "Seviye bitirilebiliyor",
+   "detay": "14 üçlü · en iyi zincir 14"
+  },
+  {
+   "goz": "🎮",
+   "seviye": "OK",
+   "baslik": "Denge cezası çalışıyor",
+   "detay": "dengeli 1100 > tek dal 1060"
+  },
+  {
+   "goz": "🎮",
+   "seviye": "OK",
+   "baslik": "Hikaye kapsamı tam",
+   "detay": "100 an · 10 perde · ruh başına 10 an"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Ana menü düzeni",
+   "detay": "logo temiz, çakışma yok"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Logo arka plana karışıyor",
+   "detay": "köşeler saydam"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Logo tekrarsız",
+   "detay": "etrafında ek sembol yok"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Kolye oturmuş",
+   "detay": "y%47 · genişlik %17"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Marka fontu yüklü",
+   "detay": "STONEBREAKING"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Düzen: küçük ekran",
+   "detay": "360×640 temiz"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Düzen: orta ekran",
+   "detay": "430×860 temiz"
+  },
+  {
+   "goz": "🎨",
+   "seviye": "OK",
+   "baslik": "Düzen: tablet ekran",
+   "detay": "768×1024 temiz"
+  },
+  {
+   "goz": "💰",
+   "seviye": "OK",
+   "baslik": "Yükleme ağırlığı",
+   "detay": "1478 KB · 17 dosya"
+  },
+  {
+   "goz": "💰",
+   "seviye": "KRITIK",
+   "baslik": "Bulut kayıt yok",
+   "detay": "firebase tanımlı değil",
+   "oneri": "Telefon değişince ilerleme gider → ABONELİK SATILAMAZ"
+  },
+  {
+   "goz": "💰",
+   "seviye": "OK",
+   "baslik": "Çalışan gelir kapıları",
+   "detay": "enerjiPaneli, abonelik, meydanOkuma, olcumSinavi, bilgelikPaylas"
+  },
+  {
+   "goz": "💰",
+   "seviye": "OK",
+   "baslik": "Viral motor",
+   "detay": "2/3 paylaşım noktası aktif"
+  },
+  {
+   "goz": "💰",
+   "seviye": "OK",
+   "baslik": "İlk seans ödülü",
+   "detay": "Sv1 hikaye anı + açılış perdesi + bilgelik sözü"
+  }
+ ]
+}

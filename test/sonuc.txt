@@ -1,0 +1,35 @@
+   yuklendi: 592 ms
+✅ sayfa acildi
+   ilk ekran: s-age
+✅ ana menuye ulasildi  — ekran: s-splash
+✅ Gunluk butonu yeni isimde  — "📜 Taşkıran Günlüğü"
+✅ Gunluk acildi
+✅ "Bastan Sona Izle" butonu var
+   gunluk satir sayisi: 12 (2 baslik + 10 perde)
+✅ 10 perde listeleniyor  — 10 perde
+✅ hikaye ekrani acildi
+   gezilen panel: 13
+      1. Perde I · Denge · 1/10         | Dört Ruh                 | ch1_denge.webp    | yuklendi:✓ | 254kr
+      2. Perde I · Kırılma · 1/10       | Çekirdek Çatladı         | ch2_kirilma.webp  | yuklendi:✓ | 284kr
+      3. Perde I · Çağrı · 1/10         | Sen Yeni Taşkıran'sın    | ch3_cagri.webp    | yuklendi:✓ | 244kr
+      4. Perde I · İlk Sunak · 1/10     | Taş Nasıl Kırılır?       | ch3_cagri.webp    | yuklendi:✓ | 301kr
+      5. Perde II · Mühür · 2/10        | İlk Mühür Çatladı        | ch10_muhur.webp   | yuklendi:✓ | 279kr
+      6. Perde III · Pyro · 3/10        | Ateş Serbest             | a20.webp          | yuklendi:✓ | 307kr
+      7. Perde IV · Aqua · 4/10         | Donmuş Okyanus           | a30.webp          | yuklendi:✓ | 313kr
+      8. Perde V · Terra · 5/10         | Boş Sayfalar             | a40.webp          | yuklendi:✓ | 341kr
+      9. Perde VI · Zephy · 6/10        | Dinmeyen Fırtına         | a50.webp          | yuklendi:✓ | 354kr
+     10. Perde VII · Gölge · 7/10       | Kendi Yansıman           | a60.webp          | yuklendi:✓ | 317kr
+     11. Perde VIII · Çember · 8/10     | Dördü Bir Arada          | a70.webp          | yuklendi:✓ | 276kr
+     12. Perde IX · İlk Taşkıran · 9/10 | Senden Önce Biri Vardı   | a85.webp          | yuklendi:✓ | 349kr
+     13. Perde X · Denge · 10/10        | Çekirdek Yeniden Doğdu   | a100.webp         | yuklendi:✓ | 349kr
+✅ 13 panel gezildi (4+9)  — 13 panel
+✅ TUM gorseller gercekten yuklendi  — hepsi ok
+✅ tum panellerde metin var
+✅ son panel "Efsane Tamamlandı"  — Efsane Tamamlandı ✦
+✅ Perde X finalde  — Çekirdek Yeniden Doğdu
+✅ zincir sayaci calisiyor  — ilk:"Perde I · Denge · 1/10" son:"Perde X · Denge · 10/10"
+✅ bitince Gunluge donuldu  — ekran: s-legend
+   benzersiz gorsel: 12 -> ch1_denge.webp, ch2_kirilma.webp, ch3_cagri.webp, ch10_muhur.webp, a20.webp, a30.webp, a40.webp, a50.webp, a60.webp, a70.webp, a85.webp, a100.webp
+✅ 13 panelde 13 farkli sahne (ch3 iki kez bilincli)  — 12 benzersiz
+✅ JS hatasi yok  — temiz
+✅ 404 / kirik dosya yok  — temiz

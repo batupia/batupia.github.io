@@ -1,0 +1,3 @@
+surum: {"build":"2026-07-29a"}
+tarih: 2026-07-29 06:43
+commit: a81b784 merge: estetik duzeltmeleri (yerel ustun)

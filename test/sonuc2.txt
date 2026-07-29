@@ -1,0 +1,25 @@
+✅ ana menu
+   profil: Sv1, izlenen perde: [], ruh: null, oturum: 0
+   "Yolculuga Basla" -> s-pick
+   ruh secim ekrani geldi, Pyro seciliyor
+   ruh secildikten sonra -> s-story
+✅ HIKAYE ACILDI (Perde I)  — ekran: s-story
+   ilk panel: Perde I · Denge | Dört Ruh
+✅ sayac YOK (tekil perde)  — Perde I · Denge
+✅ hikaye sonunda OYUN acildi  — ekran: s-game
+   tas: 36 (serbest 16, kilitli 20)
+   --dep degerleri: 0.000, 1.000
+   --dsc olcekler : 0.9550, 1.0200
+   --dsh golgeler : 3.0px, 8.0px
+✅ taslar olustu  — 36 tas
+✅ B4: katman derinligi uygulanmis
+✅ B2: serbest/kilitli ayrimi var
+✅ tas govdesi (kumtasi WebP) yuklu
+✅ B2: kilitli tasa dokununca titriyor (nope)
+✅ B2: secilen tas altin hale aliyor (sel)  — true
+   35 tas secildi, 36/36 tas kirildi
+✅ seviye sonu ekrani acildi
+✅ tease karti sonuc ekraninda VAR
+   metin: "📜 Efsanenin devamı mühürlü 8 seviye sonra — Sv10'de mühür çatlayacak."
+   bar: 11.1111% | hazir: false
+✅ JS hatasi yok  — temiz
